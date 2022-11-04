@@ -1,20 +1,49 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title class="ion-title">
+      Conversor de Moeda
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" >
+  <main class="container-principal">
+  
+  <div class="cont-op-converter">
+    <ion-item class="entrada-de-dados">
+      <ion-input type="number" placeholder="Entre com um valor"></ion-input>
+    </ion-item>
+    <p><label for="cConv">Converter de </label>
+      <select name="tConv" id="cConv">
+        <optgroup >
+          <option value="R" selected >Real(BRL)</option>
+          <option value="D">Dollar(USD)</option>
+          <option value="E">Euro(EUR)</option>
+        </optgroup>     
+      </select>
+    </p>
+    <ion-icon name="repeat" ></ion-icon>
+    <p><label for="cConv"> Para </label>
+      <select name="tConv" id="cConv">
+        <optgroup >
+          <option value="R">Real(BRL)</option>
+          <option value="D" selected>Dollar(USD)</option>
+          <option value="E">Euro(EUR)</option>
+        </optgroup>     
+      </select>
+    </p>
+    <ion-icon  name="refresh"></ion-icon>
   </div>
+ 
+</main>
+<section class="div-resultado">
+  <div class="resultado">
+    <p>Conversão de: </p> <input value="" onshow="show"/>
+Valor a converter: 100,00
+  </div>
+  <div class="resultado">
+    tem alguem
+  </div>
+</section>
+
 </ion-content>
