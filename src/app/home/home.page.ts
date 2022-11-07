@@ -7,6 +7,16 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  valor : number;
+  converterDe : string;
+  converterPara : string;
+  resultado : number;
+
   constructor() {}
+
+  handleConverter(){
+    const resul = this.valor / 5.19;
+    
+  }
 
 }

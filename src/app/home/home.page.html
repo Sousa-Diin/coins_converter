@@ -11,38 +11,41 @@
   
   <div class="cont-op-converter">
     <ion-item class="entrada-de-dados">
-      <ion-input type="number" placeholder="Entre com um valor"></ion-input>
+      <ion-input type="number" name="valor" [(ngMoodel)]="valor" placeholder="Entre com um valor"></ion-input>
     </ion-item>
     <p><label for="cConv">Converter de </label>
-      <select name="tConv" id="cConv">
+      <select name="dConv" id="cConv">
         <optgroup >
-          <option value="R" selected >Real(BRL)</option>
-          <option value="D">Dollar(USD)</option>
-          <option value="E">Euro(EUR)</option>
+          <option value="dR" selected >Real(BRL)</option>
+          <option value="dD">Dollar(USD)</option>
+          <option value="dE">Euro(EUR)</option>
         </optgroup>     
       </select>
     </p>
     <ion-icon name="repeat" ></ion-icon>
     <p><label for="cConv"> Para </label>
-      <select name="tConv" id="cConv">
+      <select name="pConv" id="cConv">
         <optgroup >
-          <option value="R">Real(BRL)</option>
-          <option value="D" selected>Dollar(USD)</option>
-          <option value="E">Euro(EUR)</option>
+          <option value="pR">Real(BRL)</option>
+          <option value="pD" selected>Dollar(USD)</option>
+          <option value="pE" >Euro(EUR)</option>
         </optgroup>     
       </select>
     </p>
-    <ion-icon  name="refresh"></ion-icon>
+    <ion-icon (click)="handleConverter()" name="refresh"></ion-icon>
   </div>
  
 </main>
+<h1>Resultado da conversão</h1>
 <section class="div-resultado">
+  
   <div class="resultado">
-    <p>Conversão de: </p> <input value="" onshow="show"/>
-Valor a converter: 100,00
+    <p>Conversão de: </p> <input name="converteDe" [(ngModel)]="converterDe" />
+    <pre>Valor a converter: </pre> 
   </div>
   <div class="resultado">
-    tem alguem
+    <p>Para: </p> <pre name="converterPara">(dR) </pre>
+    <pre>Valor convertido:{{valor}} </pre>
   </div>
 </section>
 

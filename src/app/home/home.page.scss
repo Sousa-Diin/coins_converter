@@ -2,12 +2,13 @@
   text-align: center;
 
 }
+h1 { margin-left: 4.5%;}
 .container-principal {
   display: flex;
-  width: 95%;
+  width: 99%;
   flex-flow: row wrap;
   justify-content: space-around;
-  background-color: cornflowerblue;
+  //background-color: cornflowerblue;
   margin: 0 auto;
 }
 .cont-op-converter {
@@ -43,7 +44,8 @@ label { font-size:1.5rem;}
 }
   .resultado { 
     border: 1px solid black; 
-    border-radius: 6%;
+    background-color: cornflowerblue;
+    border-radius: 2.3%;
     width: 40%;
     height: 60%;
     margin: 1%;
