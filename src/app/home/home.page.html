@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar color="dark" >
     <ion-title color="warning" class="ion-title">
       Conversor de Moeda
     </ion-title>
@@ -12,9 +12,9 @@
       <ion-input type="number" [(ngModel)]="valor" placeholder="Entre com um valor"></ion-input>
     </ion-item>
 
-  <div class="coont-op-converter">
+  <div class="cont-op-converter">
 
-    <ion-item >
+    <ion-item class="tamanho">
       <ion-label>Converter de</ion-label>
       <ion-select   [(ngModel)]="dConv">
         <ion-select-option >Real(BRL)</ion-select-option>
@@ -23,7 +23,7 @@
       </ion-select>
     </ion-item>
 
-    <ion-item size="80%">
+    <ion-item class="tamanho">
       <ion-label>Para </ion-label>
       <ion-select [(ngModel)]="pConv">
         <ion-select-option >Real(BRL)</ion-select-option>
@@ -52,8 +52,6 @@
     <p> Resultado da conversão: {{"R$ " + resultado.toFixed(2)}} </p>
   </div>
 </section>
-<ion-div>
-  Data cotação utilizada: <pre>{{dataCotacao}}</pre>
-</ion-div>
+
 </div>
 </ion-content>

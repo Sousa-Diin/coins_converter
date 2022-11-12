@@ -36,17 +36,15 @@ export class HomePage {
 
       .then(function(data){
         console.log(data)
-        dolar = data.USDBRL.bid;
 
         localStorage.setItem('euro', data.EURBRL.bid);
-        localStorage.setItem('dolar', dolar.toString());
-        localStorage.setItem('cotacao', data);
+        localStorage.setItem('dolar', data.USDBRL.bid);
 
       })
 
       dolar = parseFloat(localStorage.getItem('dolar'));
       euro = parseFloat(localStorage.getItem('euro'));
-      dataCotacao = localStorage.getItem('cotacao');
+    
       this.entrada = this.valor;
 
       if (this.dConv == 'Real(BRL)' ){
