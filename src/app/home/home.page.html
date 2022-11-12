@@ -7,45 +7,49 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
-  <main class="container-principal">
   
-  <div class="cont-op-converter">
-    <ion-item class="entrada-de-dados">
-      <ion-input type="number" name="valor" [(ngMoodel)]="valor" placeholder="Entre com um valor"></ion-input>
+    <ion-item class="eentrada-de-dados">
+      <ion-input type="number" [(ngModel)]="valor" placeholder="Entre com um valor"></ion-input>
     </ion-item>
-    <p><label for="cConv">Converter de </label>
-      <select name="dConv" id="cConv">
-        <optgroup >
-          <option value="dR" selected >Real(BRL)</option>
-          <option value="dD">Dollar(USD)</option>
-          <option value="dE">Euro(EUR)</option>
-        </optgroup>     
-      </select>
-    </p>
-    <ion-icon name="repeat" ></ion-icon>
-    <p><label for="cConv"> Para </label>
-      <select name="pConv" id="cConv">
-        <optgroup >
-          <option value="pR">Real(BRL)</option>
-          <option value="pD" selected>Dollar(USD)</option>
-          <option value="pE" >Euro(EUR)</option>
-        </optgroup>     
-      </select>
-    </p>
-    <ion-icon (click)="handleConverter()" name="refresh"></ion-icon>
+
+  <div class="coont-op-converter">
+
+    <ion-item >
+      <ion-label>Converter de</ion-label>
+      <ion-select   [(ngModel)]="dConv">
+        <ion-select-option >Real(BRL)</ion-select-option>
+        <ion-select-option >Dollar(USD)</ion-select-option>
+        <ion-select-option >Euro(EUR)</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Para </ion-label>
+      <ion-select [(ngModel)]="pConv">
+        <ion-select-option >Real(BRL)</ion-select-option>
+        <ion-select-option >Dollar(USD)</ion-select-option>
+        <ion-select-option >Euro(EUR)</ion-select-option>
+      </ion-select>
+    </ion-item>
+      
   </div>
- 
-</main>
+
+  <ion-div >
+    <ion-icon (click)="handleChange()" name="repeat-outline"></ion-icon>
+    <ion-icon (click)="handleConverter()" name="refresh-sharp"></ion-icon>
+  </ion-div>
+
 <h1>Resultado da conversão</h1>
 <section class="div-resultado">
   
   <div class="resultado">
-    <p>Conversão de: </p> <input name="converteDe" [(ngModel)]="converterDe" />
-    <pre>Valor a converter: </pre> 
+    <p>Conversão de: {{dConv}}</p> 
+    <p>Valor a converter: {{" R$ " + valor}}</p> 
   </div>
+
   <div class="resultado">
-    <p>Para: </p> <pre name="converterPara">(dR) </pre>
-    <pre>Valor convertido:{{valor}} </pre>
+    <p>Para: {{pConv}}</p> 
+    <p> Valor convertido: {{"R$ " + resultado.toFixed(2)}} </p>
   </div>
 </section>
 
