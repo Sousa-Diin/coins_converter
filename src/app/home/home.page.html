@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title class="ion-title">
+  <ion-toolbar color="grey-dark">
+    <ion-title color="warning" class="ion-title">
       Conversor de Moeda
     </ion-title>
   </ion-toolbar>
@@ -38,7 +38,7 @@
     <ion-icon (click)="handleChange()" name="repeat-outline"></ion-icon>
     <ion-icon (click)="handleConverter()" name="refresh-sharp"></ion-icon>
   </ion-div>
-
+<div class="container-resultado">
 <h1>Resultado da conversão</h1>
 <section class="div-resultado">
   
@@ -49,8 +49,8 @@
 
   <div class="resultado">
     <p>Para: {{pConv}}</p> 
-    <p> Valor convertido: {{"R$ " + resultado.toFixed(2)}} </p>
+    <p> Resultado da conversão: {{"R$ " + resultado.toFixed(4)}} </p>
   </div>
 </section>
-
+</div>
 </ion-content>
