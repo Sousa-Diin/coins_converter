@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment';
 })
 export class HomePage {
 
-  valor : number = null;
+  valor : number;
+  entrada:number = 0;
   dConv : string;
   pConv : string;
   resultado : number = 0;
@@ -26,6 +27,7 @@ export class HomePage {
     const real = 1.0;
     let dolar = 0;let euro = 0;
     let resul = 0;
+    let dataCotacao;
     
     fetch(url + coins)
       .then(function(response){
@@ -33,15 +35,20 @@ export class HomePage {
       })
 
       .then(function(data){
-        console.log(data.USDBRL.bid)
+        console.log(data)
         dolar = data.USDBRL.bid;
+
         localStorage.setItem('euro', data.EURBRL.bid);
         localStorage.setItem('dolar', dolar.toString());
+        localStorage.setItem('cotacao', data);
 
       })
 
       dolar = parseFloat(localStorage.getItem('dolar'));
-      euro = parseFloat(localStorage.getItem('euro'))
+      euro = parseFloat(localStorage.getItem('euro'));
+      dataCotacao = localStorage.getItem('cotacao');
+      this.entrada = this.valor;
+
       if (this.dConv == 'Real(BRL)' ){
         if(this.pConv == 'Dollar(USD)'){
           resul = (real/dolar);
@@ -64,6 +71,8 @@ export class HomePage {
       } 
   
       this.resultado = this.valor * resul;
+      //this.resultado.toFixed(2);
+      this.entrada = this.valor;
       console.log(this.resultado)
   }
 
