@@ -16,8 +16,8 @@ export class HomePage {
   result = 0;
   dCotacao = ' ';
   nCotacao = ' ';
-  pCotacao = 0; //preço
-  sCotacao = 0; //multiplo
+  pCotacao : any; //preço
+  sCotacao : any; //multiplo
 
 
 

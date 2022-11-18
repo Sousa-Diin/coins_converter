@@ -38,7 +38,7 @@
     <ion-icon class="button" (click)="handleChange()" name="repeat"></ion-icon>
     <ion-icon class="button" (click)="handleConverter()" name="refresh"></ion-icon>
   </ion-item>
-  
+
   <div class="container-resultado">
     <h1>Resultado da conversão</h1>
     <section class="div-resultado">
@@ -53,11 +53,11 @@
         <p> Resultado da conversão: {{"R$ " + result.toFixed(2)}} </p>
       </div>
     </section>
-    <div class="taxa">
-      <p> {{"Data cotação utilizada: " + dCotacao}} </p>
-      <p>Taxa:
+      <p class="info"> {{"Data cotação utilizada: " + dCotacao}} </p>
+
+      <p class="info">Taxa:
       {{ "1 " + convertFrom +  " " + " = " + pCotacao.toFixed(5) + " " + convertTo}}<br/>
-      {{ "1 " +convertTo + "  = " + sCotacao.toFixed(4) + " " + nCotacao}} </p>
-    </div>
+      {{ "1 " +convertTo + "  = " + sCotacao.toFixed(4) + " " + nCotacao}}</p>
+    
   </div>
 </ion-content>
