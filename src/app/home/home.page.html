@@ -6,52 +6,58 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" >
-  
+<ion-content [fullscreen]="true" class="container-principal">
+
     <ion-item class="entrada-de-dados">
-      <ion-input type="number" [(ngModel)]="valor" placeholder="Entre com um valor"></ion-input>
+      <ion-input type="number" [(ngModel)]="inputValue" placeholder="Entre com um valor"></ion-input>
     </ion-item>
 
   <div class="cont-op-converter">
 
     <ion-item class="tamanho">
       <ion-label>Converter de</ion-label>
-      <ion-select   [(ngModel)]="dConv">
+      <ion-select   [(ngModel)]="convertFrom">
         <ion-select-option >Real(BRL)</ion-select-option>
-        <ion-select-option >Dollar(USD)</ion-select-option>
+        <ion-select-option>Dollar(USD)</ion-select-option>
         <ion-select-option >Euro(EUR)</ion-select-option>
       </ion-select>
     </ion-item>
 
     <ion-item class="tamanho">
       <ion-label>Para </ion-label>
-      <ion-select [(ngModel)]="pConv">
+      <ion-select [(ngModel)]="convertTo">
         <ion-select-option >Real(BRL)</ion-select-option>
         <ion-select-option >Dollar(USD)</ion-select-option>
         <ion-select-option >Euro(EUR)</ion-select-option>
       </ion-select>
     </ion-item>
-      
+
   </div>
 
-  <ion-div >
-    <ion-icon (click)="handleChange()" name="repeat-outline"></ion-icon>
-    <ion-icon (click)="handleConverter()" name="refresh-sharp"></ion-icon>
-  </ion-div>
-<div class="container-resultado">
-<h1>Resultado da conversão</h1>
-<section class="div-resultado">
+  <ion-item class="div-button">
+    <ion-icon class="button" (click)="handleChange()" name="repeat"></ion-icon>
+    <ion-icon class="button" (click)="handleConverter()" name="refresh"></ion-icon>
+  </ion-item>
   
-  <div class="resultado">
-    <p>Conversão de: {{dConv}}</p> 
-    <p>Valor a converter: {{" R$ " + entrada.toFixed(2)}}</p> 
-  </div>
+  <div class="container-resultado">
+    <h1>Resultado da conversão</h1>
+    <section class="div-resultado">
 
-  <div class="resultado">
-    <p>Para: {{pConv}}</p> 
-    <p> Resultado da conversão: {{"R$ " + resultado.toFixed(2)}} </p>
-  </div>
-</section>
+      <div class="resultado">
+        <p>Conversão de: {{convertFrom}}</p>
+        <p>Valor a converter: {{" R$ " + showValue.toFixed(2)}}</p>
+      </div>
 
-</div>
+      <div class="resultado">
+        <p>Para: {{convertTo}}</p>
+        <p> Resultado da conversão: {{"R$ " + result.toFixed(2)}} </p>
+      </div>
+    </section>
+    <div class="taxa">
+      <p> {{"Data cotação utilizada: " + dCotacao}} </p>
+      <p>Taxa:
+      {{ "1 " + convertFrom +  " " + " = " + pCotacao.toFixed(5) + " " + convertTo}}<br/>
+      {{ "1 " +convertTo + "  = " + sCotacao.toFixed(4) + " " + nCotacao}} </p>
+    </div>
+  </div>
 </ion-content>
