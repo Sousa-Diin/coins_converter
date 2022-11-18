@@ -6,12 +6,12 @@
 .container-principal {
   display: flex;
   width: 100vw;
+  height: auto;
   flex-flow: row wrap;
   justify-content: space-around;
+  margin: 1rem;
   //background-color: cornflowerblue;
   text-align: center;
-  margin-right: auto;
-  margin-left: auto;
 }
 .cont-op-converter {
   width: 100%;
@@ -28,7 +28,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    width: 30%;
+    width: 50%;
     margin: 2%;
 
 
@@ -38,23 +38,39 @@
   margin: 0 auto;
 }
 
+h1 { float: left; margin: 1rem; padding: .5rem;}
+
+.taxa {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+p {
+  
+}
+
 label { font-size:1.5rem;}
 
 .div-button {
+  width: 80%;
+  height: auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  background-color: cornflowerblue;
   text-align: center;
-  margin-right: auto;
-  margin-left: auto;
+  margin:  0 auto;
+  padding: 1rem;
+  flex: 1;
 }
 
 
 .button {
-  width:25%;
-  min-height: 35%;
+  width:28%;
+  min-height: 60%;
   //min-width: 98%;
+  flex-grow: 2;
 }
 
 ion-div{
@@ -76,8 +92,9 @@ ion-icon::backdrop {
 }
 
 .container-resultado {
+
   border: .8px solid #cccc;
-  height: 57%;
+  height: auto;
   margin: .7%;
   padding: 2rem;
 }
@@ -98,3 +115,6 @@ ion-icon::backdrop {
     padding: 1%;
   }
 
+  .taxa {
+    height: auto;
+  }
